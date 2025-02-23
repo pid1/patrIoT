@@ -44,4 +44,5 @@ time.sleep(10)
 
 # go into sleep mode until we rotate
 # the photo 24 hours later
-magtag.exit_and_deep_sleep(86400)
+#magtag.exit_and_deep_sleep(86400)
+magtag.exit_and_deep_sleep(5)
