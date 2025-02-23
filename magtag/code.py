@@ -1,48 +1,72 @@
 import time
-import board
-from adafruit_magtag.magtag import MagTag
 import displayio
-
-display = board.DISPLAY
+import wifi
+import os
+from adafruit_magtag.magtag import MagTag
+import adafruit_requests
+import socketpool
+import ssl
+from adafruit_imageload import load
+from io import BytesIO
 
 magtag = MagTag()
 
-# Load the image
-bitmap = displayio.OnDiskBitmap("usa.bmp")
+# Connect to WiFi
+wifi.radio.connect(os.getenv("CIRCUITPY_WIFI_SSID"), os.getenv("CIRCUITPY_WIFI_PASSWORD"))
 
-# Create a TileGrid to hold the image
-tile_grid = displayio.TileGrid(bitmap, pixel_shader=bitmap.pixel_shader)
+# URL of the bitmap image
+url = "http://137.184.19.28:80/murica.bmp"
 
-# Calculate the position to center the image
-# MagTag display is 296x128 pixels
-image_width = bitmap.width
-image_height = bitmap.height
-display_width = magtag.display.width
-display_height = magtag.display.height
+# Download the image
+pool = socketpool.SocketPool(wifi.radio)
+requests = adafruit_requests.Session(pool, ssl.create_default_context())
+response = requests.get(url)
+if response.status_code == 200:
+    image_data = response.content
+else:
+    print("Failed to download the image")
+    image_data = None
 
-x = (display_width - image_width) // 2
-y = (display_height - image_height) // 2
+if image_data:
+    # Save the image to a file
+    with open("/murica.bmp", "wb") as file:
+        file.write(image_data)
 
-# Set the position of the TileGrid
-tile_grid.x = x
-tile_grid.y = y
+    # Load the image
+    bitmap = displayio.OnDiskBitmap("murica.bmp")
 
-# Create a Group to hold the TileGrid
-group = displayio.Group()
+    # Create a TileGrid to hold the image
+    tile_grid = displayio.TileGrid(bitmap, pixel_shader=bitmap.pixel_shader)
 
-# Add the TileGrid to the Group
-group.append(tile_grid)
+    # Calculate the position to center the image
+    # MagTag display is 296x128 pixels
+    image_width = bitmap.width
+    image_height = bitmap.height
+    display_width = magtag.display.width
+    display_height = magtag.display.height
 
-# Show the Group on the display
-magtag.splash.append(group)
+    x = (display_width - image_width) // 2
+    y = (display_height - image_height) // 2
 
-# Refresh the display to show the image
-magtag.display.refresh()
+    # Set the position of the TileGrid
+    tile_grid.x = x
+    tile_grid.y = y
 
-# Wait for the display to finish updating
-time.sleep(10)
+    # Create a Group to hold the TileGrid
+    group = displayio.Group()
 
-# go into sleep mode until we rotate
-# the photo 24 hours later
-#magtag.exit_and_deep_sleep(86400)
-magtag.exit_and_deep_sleep(5)
+    # Add the TileGrid to the Group
+    group.append(tile_grid)
+
+    # Show the Group on the display
+    magtag.splash.append(group)
+
+    # Refresh the display to show the image
+    magtag.display.refresh()
+
+    # Wait for the display to finish updating
+    time.sleep(10)
+
+    # go into sleep mode until we rotate
+    # the photo 24 hours later
+    magtag.exit_and_deep_sleep(86400)

@@ -37,4 +37,4 @@ resized_image = image.resize((128, 128), Image.LANCZOS)
 indexed_image = resized_image.convert("P", palette=Image.ADAPTIVE)
 
 # Save the indexed bitmap
-indexed_image.save("indexed_image.bmp")
+indexed_image.save("/opt/murica.bmp")

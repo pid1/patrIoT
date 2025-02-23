@@ -1,0 +1,9 @@
+[Unit]
+Description=Run murica-generator.py daily at midnight Central Time
+
+[Timer]
+OnCalendar=*-*-* 00:00:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target
