@@ -2,6 +2,8 @@
 
 Daily AI generated patriotic images on the Adafruit MagTag
 
+![Demo Image](demo.png)
+
 ## Client Requirements
 
 This assumes that the MagTag storage is remounted read/write after boot using boot.py.
