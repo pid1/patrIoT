@@ -26,6 +26,9 @@ MagTag code is written in CircuitPython. The following libraries are required:
   - adafruit_requests
   - adafruit_ticks
   - simpleio
+  - socketpool
+  - ssl
+  - wifi
 
 ## Server Requirements
 
