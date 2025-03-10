@@ -9,13 +9,6 @@ Daily AI generated patriotic images on the Adafruit MagTag
 Use the included boot.py to remount the internal storage as read/write after boot.
 Hold down the A / left-most face button (D15) to disable this and instead allow your PC write to the circuitpy drive over USB.
 
-
-```python
-import storage
-
-storage.remount("/", readonly=False)
-```
-
 MagTag code is written in CircuitPython. The following libraries are required:
 
 - Adafruit MagTag
