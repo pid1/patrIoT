@@ -6,7 +6,9 @@ Daily AI generated patriotic images on the Adafruit MagTag
 
 ## Client Requirements
 
-This assumes that the MagTag storage is remounted read/write after boot using boot.py.
+Use the included boot.py to remount the internal storage as read/write after boot.
+Hold down the A / left-most face button (D15) to disable this and instead allow your PC write to the circuitpy drive over USB.
+
 
 ```python
 import storage

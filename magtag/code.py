@@ -6,6 +6,7 @@ from adafruit_magtag.magtag import MagTag
 import adafruit_requests
 import socketpool
 import ssl
+import storage
 from adafruit_imageload import load
 from io import BytesIO
 
@@ -13,6 +14,18 @@ magtag = MagTag()
 
 # Connect to WiFi
 wifi.radio.connect(os.getenv("CIRCUITPY_WIFI_SSID"), os.getenv("CIRCUITPY_WIFI_PASSWORD"))
+
+if storage.getmount('/').readonly:
+    magtag.add_text(
+        text_position=(
+        (magtag.graphics.display.width // 2) - 1,
+        (magtag.graphics.display.height // 2) - 1,
+        ),
+        text_scale=3,
+        text_anchor_point=(0.5, 0.5),
+        )
+    magtag.set_text("> USB mode")
+    magtag.exit_and_deep_sleep(120)
 
 # URL of the bitmap image
 url = "http://137.184.19.28:80/murica.bmp"
