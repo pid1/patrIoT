@@ -34,7 +34,7 @@ image = Image.open("generated_image.png")
 timestamp = int(datetime.datetime.now().timestamp())
 
 # Write the original image out to disk
-image = Image.save(f"/opt/{timestamp}-original.png")
+image.save(f"/opt/murica/{timestamp}-original.png")
 
 # Resize the image
 resized_image = image.resize((128, 128), Image.LANCZOS)
@@ -43,5 +43,5 @@ resized_image = image.resize((128, 128), Image.LANCZOS)
 indexed_image = resized_image.convert("P", palette=Image.ADAPTIVE)
 
 # Save the indexed bitmap
-indexed_image.save(f"/opt/murica.bmp")
-indexed_image.save (f"/opt/{timestamp}-bitmap.bmp")
+indexed_image.save("/opt/murica/murica.bmp")
+indexed_image.save (f"/opt/murica/{timestamp}-bitmap.bmp")
