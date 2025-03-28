@@ -3,5 +3,5 @@ Description=Run murica-generator.py
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/python3 /opt/murica-generator.py
+ExecStart=/usr/bin/python3 /opt/murica/murica-generator.py
 Environment="OPENAI_API_KEY=your_openai_api_key"
