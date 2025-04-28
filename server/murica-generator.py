@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import base64
 import datetime
 import os
 import requests
@@ -18,15 +19,11 @@ response = client.images.generate(
     n=1,
 )
 
-image_url = response.data[0].url
-
-# Retrieve and save the generated image
-image_response = requests.get(image_url)
-if image_response.status_code == 200:
-    with open("generated_image.png", "wb") as f:
-        f.write(image_response.content)
-else:
-    print("Failed to retrieve the image")
+# Save the generated image
+image_base64 = response.data[0].b64_json
+image_bytes = base64.b64decode(image_base64)
+with open("generated_image.png", "wb") as f:
+    f.write(image_bytes)
 
 # Open the saved image
 image = Image.open("generated_image.png")
