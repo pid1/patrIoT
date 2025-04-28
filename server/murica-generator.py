@@ -11,8 +11,8 @@ api_key=os.environ["OPENAI_API_KEY"]
 client = OpenAI(api_key=api_key)
 
 response = client.images.generate(
-    model="dall-e-3",
-    prompt="a patriotic image representing the United States of America to be displayed on a small, black and white, low resolution display, so include fewer, larger items and not too much background detail",
+    model="gpt-image-1",
+    prompt="a children's book drawing of a patriotic image representing the United States of America to be displayed on a small, black and white, low resolution display. Include fewer, larger items and not too much background detail",
     size="1024x1024",
     quality="standard",
     n=1,
