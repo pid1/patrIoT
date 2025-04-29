@@ -1,4 +1,3 @@
-import time
 import displayio
 import wifi
 import os
@@ -7,8 +6,6 @@ import adafruit_requests
 import socketpool
 import ssl
 import storage
-from adafruit_imageload import load
-from io import BytesIO
 import board
 import random
 

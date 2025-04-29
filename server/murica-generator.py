@@ -3,7 +3,6 @@
 import base64
 import datetime
 import os
-import requests
 from openai import OpenAI
 from PIL import Image
 

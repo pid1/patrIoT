@@ -11,19 +11,13 @@ Hold down the A / left-most face button (D15) to disable this and instead allow 
 
 MagTag code is written in CircuitPython. The following libraries are required:
 
-- Adafruit MagTag
-- Adafruit MagTag Libraries
-  - adafruit_bitmap_font
-  - adafruit_imageload
-  - adafruit_io
-  - adafruit_magtag
-  - adafruit_minimqtt
-  - adafruit_requests
-  - adafruit_ticks
-  - simpleio
-  - socketpool
-  - ssl
-  - wifi
+- adafruit_bitmap_font
+- adafruit_io
+- adafruit_magtag
+- adafruit_minimqtt
+- adafruit_requests
+- adafruit_ticks
+- simpleio
 
 ## Server Requirements
 
