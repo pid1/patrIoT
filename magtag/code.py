@@ -8,8 +8,36 @@ import ssl
 import storage
 import board
 import random
+import alarm
+import digitalio
 
 magtag = MagTag()
+
+magtag.peripherals.buttons[3].deinit()
+pin_alarm = alarm.pin.PinAlarm(pin=board.D11, value=False, pull=True)
+
+note_1 = 233
+note_2 = 294
+note_3 = 330
+note_4 = 349
+note_5 = 392
+note_6 = 440
+note_7 = 466
+note_8 = 523
+note_9 = 587
+note_10 = 622
+note_11 = 698
+
+try:
+    # Set NeoPixel colors using MagTag's built-in NeoPixel management
+    magtag.peripherals.neopixel_disable = False
+    magtag.peripherals.neopixels[3] = (255, 255, 255)  # Bright white
+    magtag.peripherals.neopixels[0] = (255, 255, 255)  # Bright white
+    magtag.peripherals.neopixels[2] = (255, 0, 0)      # Bright red
+    magtag.peripherals.neopixels[1] = (0, 0, 255)      # Bright blue
+    magtag.peripherals.neopixels.show()
+except:
+    pass
 
 if storage.getmount('/').readonly:
     magtag.add_text(
@@ -41,8 +69,6 @@ try:
     else:
         print("Failed to download the image")
 except:
-    # we might be offline
-    sleeptime = 120
     pass
 
 try:
@@ -91,8 +117,14 @@ try:
     while board.DISPLAY.busy:
         pass
 except:
-    sleeptime=120
     pass
 
-# go into sleep mode until we rotate the image or get online again
-magtag.exit_and_deep_sleep(sleeptime)
+try:
+    magtag.peripherals.neopixels.fill((0, 0, 0))  # Turn off all NeoPixels
+    magtag.peripherals.neopixels.show()
+    magtag.peripherals.neopixel_disable = True
+except:
+    pass
+
+# go into sleep mode until we press D11 again
+alarm.exit_and_deep_sleep_until_alarms(pin_alarm)
