@@ -9,7 +9,7 @@ import storage
 import board
 import random
 import alarm
-import digitalio
+import time
 
 magtag = MagTag()
 
@@ -31,11 +31,29 @@ note_11 = 698
 try:
     # Set NeoPixel colors using MagTag's built-in NeoPixel management
     magtag.peripherals.neopixel_disable = False
-    magtag.peripherals.neopixels[3] = (255, 255, 255)  # Bright white
+    magtag.peripherals.neopixels[2] = (0, 0, 255)      # Bright blue
+    magtag.peripherals.neopixels[3] = (0, 0, 255)      # Bright blue
+    magtag.peripherals.neopixels[1] = (255, 0, 0)      # Bright red
     magtag.peripherals.neopixels[0] = (255, 255, 255)  # Bright white
-    magtag.peripherals.neopixels[2] = (255, 0, 0)      # Bright red
-    magtag.peripherals.neopixels[1] = (0, 0, 255)      # Bright blue
     magtag.peripherals.neopixels.show()
+except:
+    pass
+
+try:
+    mult = 0.5 # Allow for easily speeding up or slowing down the tones
+    magtag.peripherals.play_tone(note_4, mult*0.75)
+    magtag.peripherals.play_tone(note_2, mult*0.25)
+    magtag.peripherals.play_tone(note_1, mult)
+    magtag.peripherals.play_tone(note_2, mult)
+    magtag.peripherals.play_tone(note_4, mult)
+    magtag.peripherals.play_tone(note_7, mult*2)
+    magtag.peripherals.play_tone(note_9, mult*0.75)
+    magtag.peripherals.play_tone(note_8, mult*0.25)
+    magtag.peripherals.play_tone(note_7, mult)
+    magtag.peripherals.play_tone(note_2, mult)
+    magtag.peripherals.play_tone(note_3, mult)
+    magtag.peripherals.play_tone(note_4, mult*2)
+
 except:
     pass
 
@@ -65,7 +83,7 @@ try:
     if response.status_code == 200:
         with open("/murica.bmp", "wb") as file:
             file.write(response.content)
-        sleeptime = 86400 / 2
+        time.sleep(5)
     else:
         print("Failed to download the image")
 except:
@@ -118,6 +136,8 @@ try:
         pass
 except:
     pass
+
+time.sleep(10)
 
 try:
     magtag.peripherals.neopixels.fill((0, 0, 0))  # Turn off all NeoPixels

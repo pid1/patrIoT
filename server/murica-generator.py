@@ -12,7 +12,7 @@ client = OpenAI(api_key=api_key)
 
 response = client.images.generate(
     model="gpt-image-1",
-    prompt="a children's book drawing of a patriotic image representing the United States of America to be displayed on a small, black and white, low resolution display. Include fewer, larger items and not too much background detail. Do not add text.",
+    prompt="a children's book drawing of a patriotic image representing the United States of America to be displayed on a small, black and white, low resolution display. Include fewer, larger items and not too much background detail. Do not add text. Include famous landmarks, symbols, and people from American history like the Statue of Liberty, the American flag, George Washington, Ben Franklin, Abraham Lincoln, and the bald eagle.",
     size="1024x1024",
     quality="auto",
     n=1,
