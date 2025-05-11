@@ -74,7 +74,7 @@ try:
     wifi.radio.connect(os.getenv("CIRCUITPY_WIFI_SSID"), os.getenv("CIRCUITPY_WIFI_PASSWORD"))
 
     # URL of the bitmap image
-    url = "http://137.184.19.28:80/murica.bmp"
+    url = "http://<ip>:80/murica.bmp"
 
     # Download the image
     pool = socketpool.SocketPool(wifi.radio)
