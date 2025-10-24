@@ -28,7 +28,7 @@ def main():
         # Generate image using the same prompt as the original server
         response = client.images.generate(
             model="dall-e-3",  # Updated to use DALL-E 3 (gpt-image-1 was deprecated)
-            prompt="a children's book drawing of a patriotic image representing the United States of America to be displayed on a small, black and white, low resolution display. Include fewer, larger items and not too much background detail. Do not add text. Include famous landmarks, symbols, and people from American history like the Statue of Liberty, the American flag, George Washington, Ben Franklin, Abraham Lincoln, and the bald eagle.",
+            prompt="a children's book drawing of a patriotic image representing the United States of America to be displayed on a small, black and white, low resolution display. Include fewer, larger items and not too much background detail. Do not add text. Do not incorporate more than four visual elements. Visual elements can include, but are not limited to, famous landmarks, symbols, and people from American history like the Statue of Liberty, the American flag, George Washington, Ben Franklin, Abraham Lincoln, and the bald eagle.",
             size="1024x1024",
             quality="standard",
             n=1,
