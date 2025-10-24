@@ -8,9 +8,12 @@ Daily AI generated patriotic images on the AdaFruit MagTag
 
 This project uses GitHub Actions to automatically generate patriotic images using OpenAI's DALL-E API once per day. The images are processed and stored in the repository, making them accessible via GitHub's raw content URLs.
 
+Clicking the right-most face button (D11) button on the MagTag plays the star spangled banner, lights red, white, and blue LEDs, and grabs the latest image from the server.
+
 ## MagTag Requirements
 
-Use the included `boot.py` to remount the internal storage as read/write after boot.
+Use the included `boot.py` to remount the internal storage as read/write after boot. This allows for querying, storing, and displaying the Bitmap file from GitHub.
+
 Hold down the left-most face button (D15) to disable this and instead allow your PC write to the CircuitPy drive over USB.
 
 MagTag code is written in CircuitPython. The following libraries are required:
@@ -35,10 +38,3 @@ MagTag code is written in CircuitPython. The following libraries are required:
 - **Image Processing**: Automatically resizes and converts images to MagTag-compatible format
 - **Image Storage**: Current image saved as `images/murica.bmp`, historical images archived with timestamps
 - **Web Access**: Images are accessible via GitHub raw URLs and browsable via `images/index.html`
-
-## Usage
-
-Pressing the right-most face button (D11) on the MagTag will:
-- Trigger red, white, and blue LEDs
-- Play the star spangled banner 
-- Download and display the most recent patriotic image from GitHub
