@@ -4,7 +4,11 @@ Daily AI generated patriotic images on the AdaFruit MagTag
 
 ![Demo Image](demo.png)
 
-## Client Requirements
+## How It Works
+
+This project uses GitHub Actions to automatically generate patriotic images using OpenAI's DALL-E API once per day. The images are processed and stored in the repository, making them accessible via GitHub's raw content URLs.
+
+## MagTag Requirements
 
 Use the included `boot.py` to remount the internal storage as read/write after boot.
 Hold down the left-most face button (D15) to disable this and instead allow your PC write to the CircuitPy drive over USB.
@@ -19,12 +23,22 @@ MagTag code is written in CircuitPython. The following libraries are required:
 - adafruit_ticks
 - simpleio
 
-## Server Requirements
+## Setup
 
-See `server/requirements.txt`
+1. **Configure GitHub Secrets**: Add your OpenAI API key as a repository secret named `OPENAI_API_KEY`
+2. **Enable GitHub Pages** (optional): For easier browsing of the image archive via the auto-generated `images/index.html`
+3. **Deploy MagTag Code**: Copy the contents of the `magtag/` directory to your MagTag device
+
+## Architecture
+
+- **GitHub Action**: Runs daily at midnight UTC to generate new images
+- **Image Processing**: Automatically resizes and converts images to MagTag-compatible format
+- **Image Storage**: Current image saved as `images/murica.bmp`, historical images archived with timestamps
+- **Web Access**: Images are accessible via GitHub raw URLs and browsable via `images/index.html`
 
 ## Usage
 
-The server-side code runs as a `systemd` timer once every 24 hours. It generates a new patriotic image via the OpenAI image generation API.
-
-Pressing the right-most face button (D11) on the MagTag will trigger red, white, and blue LEDs, play the star spangled banner, and display the most recent image.
+Pressing the right-most face button (D11) on the MagTag will:
+- Trigger red, white, and blue LEDs
+- Play the star spangled banner 
+- Download and display the most recent patriotic image from GitHub

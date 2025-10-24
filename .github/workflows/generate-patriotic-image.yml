@@ -1,0 +1,44 @@
+name: Generate Daily Patriotic Image
+
+on:
+  schedule:
+    # Run daily at midnight UTC (equivalent to previous systemd timer)
+    - cron: '0 0 * * *'
+  workflow_dispatch: # Allow manual triggering for testing
+
+jobs:
+  generate-image:
+    runs-on: ubuntu-latest
+    
+    permissions:
+      contents: write # Allow pushing changes back to repository
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+        
+    - name: Install dependencies
+      run: |
+        pip install requests openai pillow
+        
+    - name: Generate patriotic image
+      env:
+        OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      run: |
+        python3 scripts/generate_image.py
+        
+    - name: Commit and push changes
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add images/
+        # Only commit if there are changes
+        if ! git diff --staged --quiet; then
+          git commit -m "Daily patriotic image update - $(date -u +"%Y-%m-%d %H:%M:%S UTC")"
+          git push
+        fi

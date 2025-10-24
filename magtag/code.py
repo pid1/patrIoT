@@ -73,8 +73,9 @@ try:
     # Connect to WiFi
     wifi.radio.connect(os.getenv("CIRCUITPY_WIFI_SSID"), os.getenv("CIRCUITPY_WIFI_PASSWORD"))
 
-    # URL of the bitmap image
-    url = "http://<ip>:80/murica.bmp"
+    # URL of the bitmap image from GitHub raw content
+    # Replace 'pid1' with actual username/org and 'patrIoT' with actual repo name
+    url = "https://raw.githubusercontent.com/pid1/patrIoT/main/images/murica.bmp"
 
     # Download the image
     pool = socketpool.SocketPool(wifi.radio)
