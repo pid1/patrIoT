@@ -1,26 +1,54 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>PatrIoT - Daily Patriotic Images (Test)</title>
+    <title>PatrIoT - Daily Patriotic Images</title>
     <style>
         body { font-family: Arial, sans-serif; margin: 20px; }
         .current { background: #f0f8ff; padding: 20px; border-radius: 10px; margin-bottom: 30px; }
+        .archive { margin-top: 30px; }
+        .image-entry { margin: 10px 0; padding: 10px; border: 1px solid #ddd; border-radius: 5px; }
+        .timestamp { color: #666; font-size: 0.9em; }
         img { max-width: 200px; height: auto; margin: 10px; border: 1px solid #ccc; }
     </style>
 </head>
 <body>
-    <h1>🇺🇸 PatrIoT - Daily Patriotic Images (Test)</h1>
+    <h1>🇺🇸 PatrIoT - Daily Patriotic Images</h1>
     
     <div class="current">
-        <h2>Current Test Image</h2>
-        <p>This is a test image to verify the processing pipeline works correctly.</p>
-        <img src="murica.bmp" alt="Test patriotic image" />
+        <h2>Current Image (for MagTag display)</h2>
+        <p>This is the latest image that the MagTag device will download and display.</p>
+        <img src="murica.bmp" alt="Current patriotic image" />
         <br>
         <a href="murica.bmp" download>Download murica.bmp</a>
     </div>
     
+    <div class="archive">
+        <h2>Image Archive</h2>
+        <p>Historical patriotic images generated daily by AI.</p>
+
+        <div class="image-entry">
+            <div class="timestamp">2025-10-24 01:18:35</div>
+            <img src="1761268715-original.png" alt="Original image from 2025-10-24 01:18:35" />
+            <img src="1761268715-bitmap.bmp" alt="Bitmap version from 2025-10-24 01:18:35" />
+            <br>
+            <a href="1761268715-original.png" download>Original PNG</a> | 
+            <a href="1761268715-bitmap.bmp" download>Bitmap BMP</a>
+        </div>
+
+        <div class="image-entry">
+            <div class="timestamp">2025-10-24 00:27:21</div>
+            <img src="1761265641-original.png" alt="Original image from 2025-10-24 00:27:21" />
+            <img src="1761265641-bitmap.bmp" alt="Bitmap version from 2025-10-24 00:27:21" />
+            <br>
+            <a href="1761265641-original.png" download>Original PNG</a> | 
+            <a href="1761265641-bitmap.bmp" download>Bitmap BMP</a>
+        </div>
+
+    </div>
+    
     <footer style="margin-top: 50px; padding-top: 20px; border-top: 1px solid #ddd; color: #666;">
-        <p>Test version - Generated without OpenAI to verify processing pipeline</p>
+        <p>Generated automatically by GitHub Actions using OpenAI DALL-E</p>
+        <p>Part of the <a href="https://github.com/pid1/patrIoT">PatrIoT project</a> - Daily AI-generated patriotic images for AdaFruit MagTag</p>
     </footer>
 </body>
 </html>
