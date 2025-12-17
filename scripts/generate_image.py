@@ -48,6 +48,7 @@ def main():
 
         # Save the original high-resolution image for archival
         original_path = images_dir / f"{timestamp}-original.png"
+        image = Image.open("temp_generated.png")
         image.save(original_path)
         print(f"Saved original image: {original_path}")
 
@@ -68,7 +69,7 @@ def main():
         print(f"Saved archived bitmap: {archived_bmp_path}")
 
         # Clean up temporary file
-        temp_path.unlink()
+        Path("temp_generated.png").unlink()
         
         print("Image generation and processing completed successfully!")
         
@@ -84,9 +85,7 @@ def create_image_index(images_dir):
     index_path = images_dir / "index.html"
     
     # Get all image files
-    original_images = sorted(images_dir.glob("*-original.png"), reverse=True)
-    bitmap_images = sorted(images_dir.glob("*-bitmap.bmp"), reverse=True)
-    
+    original_images = sorted(images_dir.glob("*-original.png"), reverse=True)    
     html_content = """<!DOCTYPE html>
 <html>
 <head>
