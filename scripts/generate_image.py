@@ -34,7 +34,7 @@ def main():
             n=1,
         )
 
-        image_base64 = result.data[0].b64_json
+        image_base64 = response.data[0].b64_json
         image_bytes = base64.b64decode(image_base64)
 
         with open("temp_generated.png", "wb") as f:
