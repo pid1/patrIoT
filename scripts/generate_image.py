@@ -28,7 +28,11 @@ def main():
         # Generate image using the same prompt as the original server
         response = client.images.generate(
             model="gpt-image-1.5",
-            prompt="a children's book drawing of a patriotic image representing the United States of America to be displayed on a small, greyscale display. Do not add text. Only incorporate one core visual element. Visual elements can include, but are not limited to, famous landmarks, symbols, and people from American history like the Statue of Liberty, the American flag, George Washington, Ben Franklin, Abraham Lincoln, and the bald eagle. Use dithering to achieve an appealing visual style and sense of depth.",
+            prompt="A children’s book illustration for a small, greyscale e-ink display. \
+                    Scene: A single, iconic American symbol (such as the Statue of Liberty, American flag, George Washington, Abraham Lincoln, or a bald eagle) centered on a plain background. \
+                    Style: Hand-drawn, dithered, with clear lines and depth, suitable for a 128x128 pixel display. \
+                    Constraints: No text, no watermarks, no logos, only one main visual element, high contrast for greyscale, visually appealing dithering. \
+                    Intended use: Displayed on a small, low-resolution e-ink device.",
             size="1024x1024",
             quality="high",
             n=1,
