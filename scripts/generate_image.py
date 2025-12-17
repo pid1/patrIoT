@@ -30,7 +30,7 @@ def main():
             model="gpt-image-1.5",
             prompt="a children's book drawing of a patriotic image representing the United States of America to be displayed on a small, greyscale display. Do not add text. Only incorporate one core visual element. Visual elements can include, but are not limited to, famous landmarks, symbols, and people from American history like the Statue of Liberty, the American flag, George Washington, Ben Franklin, Abraham Lincoln, and the bald eagle. Use dithering to achieve an appealing visual style and sense of depth.",
             size="1024x1024",
-            quality="standard",
+            quality="high",
             n=1,
         )
 
