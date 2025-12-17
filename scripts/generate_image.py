@@ -34,21 +34,11 @@ def main():
             n=1,
         )
 
-        # Get the image URL (DALL-E 3 returns URLs, not base64 by default)
-        image_url = response.data[0].url
-        
-        # Download the image
-        import requests
-        image_response = requests.get(image_url)
-        image_response.raise_for_status()
-        
-        # Save as temporary file
-        temp_path = images_dir / "temp_generated.png"
-        with open(temp_path, "wb") as f:
-            f.write(image_response.content)
+        image_base64 = result.data[0].b64_json
+        image_bytes = base64.b64decode(image_base64)
 
-        # Open the saved image
-        image = Image.open(temp_path)
+        with open("temp_generated.png", "wb" as f:
+            f.write(image_bytes)
         
         # Generate timestamp for archival
         timestamp = int(datetime.datetime.now().timestamp())
