@@ -51,9 +51,11 @@ def main():
         # Generate image using the same prompt as the original server
         response = client.images.generate(
             model="gpt-image-1.5",
-            prompt=f"Children's book illustration of {subject}, close-up filling most of the frame. \
-                    Hand-drawn style with bold outlines and high contrast, suitable for greyscale dithering. \
-                    Simple, minimal background. No text or watermarks. 128x128 pixel e-ink display target."
+            prompt = (
+                f"Children's book illustration of {subject}, close-up filling most of the frame. "
+                "Hand-drawn style with bold outlines, high contrast suitable for greyscale dithering. "
+                "Simple, minimal background. No text or watermarks. 128x128 pixel e-ink display target."
+            )
             size="1024x1024",
             quality="high",
             n=1,
