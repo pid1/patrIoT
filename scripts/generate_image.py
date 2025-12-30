@@ -55,7 +55,7 @@ def main():
                 f"Children's book illustration of {subject}, close-up filling most of the frame. "
                 "Hand-drawn style with bold outlines, high contrast suitable for greyscale dithering. "
                 "Simple, minimal background. No text or watermarks. 128x128 pixel e-ink display target."
-            )
+            ),
             size="1024x1024",
             quality="high",
             n=1,
