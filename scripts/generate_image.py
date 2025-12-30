@@ -3,6 +3,7 @@
 import base64
 import datetime
 import os
+import random
 import sys
 from pathlib import Path
 from openai import OpenAI
@@ -23,16 +24,36 @@ def main():
     images_dir.mkdir(exist_ok=True)
 
     print("Generating patriotic image using OpenAI...")
+
+    subjects = [
+        "the Statue of Liberty",
+        "a bald eagle in profile",
+        "Abraham Lincoln's portrait",
+        "George Washington's portrait", 
+        "an American flag waving",
+        "the Liberty Bell",
+        "Mount Rushmore",
+        "The Capitol Building dome",
+        "Uncle Sam pointing",
+        "An American bison",
+        "An Apollo astronaut with helmet",
+        "Benjamin Franklin's portrait",
+        "Theodore Roosevelt's portrait",
+        "A Revolutionary War minuteman with musket",
+        "The Space Shuttle",
+        "NASA astronauts",
+        "saturn V rocket",
+    ]
+    
+    subject = random.choice(subjects)
     
     try:
         # Generate image using the same prompt as the original server
         response = client.images.generate(
             model="gpt-image-1.5",
-            prompt="A children’s book illustration for a small, greyscale e-ink display. \
-                    Scene: A single, iconic American symbol (such as the Statue of Liberty, American flag, George Washington, Abraham Lincoln, or a bald eagle) centered on a plain background. \
-                    Style: Hand-drawn, dithered, with clear lines and depth, suitable for a 128x128 pixel display. \
-                    Constraints: No text, no watermarks, no logos, only one main visual element, high contrast for greyscale, visually appealing dithering. \
-                    Intended use: Displayed on a small, low-resolution e-ink device.",
+            prompt=f"Children's book illustration of {subject}, close-up filling most of the frame. \
+                    Hand-drawn style with bold outlines and high contrast, suitable for greyscale dithering. \
+                    Simple, minimal background. No text or watermarks. 128x128 pixel e-ink display target."
             size="1024x1024",
             quality="high",
             n=1,
