@@ -1,15 +1,16 @@
-import displayio
-import wifi
 import os
-from adafruit_magtag.magtag import MagTag
-import adafruit_requests
-import socketpool
-import ssl
-import storage
-import board
 import random
-import alarm
+import ssl
 import time
+
+import adafruit_requests
+import alarm
+import board
+import displayio
+import socketpool
+import storage
+import wifi
+from adafruit_magtag.magtag import MagTag
 
 magtag = MagTag()
 
@@ -31,47 +32,49 @@ note_11 = 698
 try:
     # Set NeoPixel colors using MagTag's built-in NeoPixel management
     magtag.peripherals.neopixel_disable = False
-    magtag.peripherals.neopixels[2] = (0, 0, 255)      # Bright blue
-    magtag.peripherals.neopixels[3] = (0, 0, 255)      # Bright blue
-    magtag.peripherals.neopixels[1] = (255, 0, 0)      # Bright red
+    magtag.peripherals.neopixels[2] = (0, 0, 255)  # Bright blue
+    magtag.peripherals.neopixels[3] = (0, 0, 255)  # Bright blue
+    magtag.peripherals.neopixels[1] = (255, 0, 0)  # Bright red
     magtag.peripherals.neopixels[0] = (255, 255, 255)  # Bright white
     magtag.peripherals.neopixels.show()
 except:
     pass
 
 try:
-    mult = 0.5 # Allow for easily speeding up or slowing down the tones
-    magtag.peripherals.play_tone(note_4, mult*0.75)
-    magtag.peripherals.play_tone(note_2, mult*0.25)
+    mult = 0.5  # Allow for easily speeding up or slowing down the tones
+    magtag.peripherals.play_tone(note_4, mult * 0.75)
+    magtag.peripherals.play_tone(note_2, mult * 0.25)
     magtag.peripherals.play_tone(note_1, mult)
     magtag.peripherals.play_tone(note_2, mult)
     magtag.peripherals.play_tone(note_4, mult)
-    magtag.peripherals.play_tone(note_7, mult*2)
-    magtag.peripherals.play_tone(note_9, mult*0.75)
-    magtag.peripherals.play_tone(note_8, mult*0.25)
+    magtag.peripherals.play_tone(note_7, mult * 2)
+    magtag.peripherals.play_tone(note_9, mult * 0.75)
+    magtag.peripherals.play_tone(note_8, mult * 0.25)
     magtag.peripherals.play_tone(note_7, mult)
     magtag.peripherals.play_tone(note_2, mult)
     magtag.peripherals.play_tone(note_3, mult)
-    magtag.peripherals.play_tone(note_4, mult*2)
+    magtag.peripherals.play_tone(note_4, mult * 2)
 
 except:
     pass
 
-if storage.getmount('/').readonly:
+if storage.getmount("/").readonly:
     magtag.add_text(
         text_position=(
-        (magtag.graphics.display.width // 2) - 1,
-        random.uniform(0,magtag.graphics.display.height)
+            (magtag.graphics.display.width // 2) - 1,
+            random.uniform(0, magtag.graphics.display.height),
         ),
-        text_scale=random.randint(1,5),
+        text_scale=random.randint(1, 5),
         text_anchor_point=(0.5, 0.5),
-        )
+    )
     magtag.set_text("> USB mode")
     magtag.exit_and_deep_sleep(120)
 
 try:
     # Connect to WiFi
-    wifi.radio.connect(os.getenv("CIRCUITPY_WIFI_SSID"), os.getenv("CIRCUITPY_WIFI_PASSWORD"))
+    wifi.radio.connect(
+        os.getenv("CIRCUITPY_WIFI_SSID"), os.getenv("CIRCUITPY_WIFI_PASSWORD")
+    )
 
     # URL of the bitmap image from GitHub raw content
     # Replace 'pid1' with actual username/org and 'patrIoT' with actual repo name
@@ -109,7 +112,7 @@ try:
     x = (display_width - image_width) // 2
     y = (display_height - image_height) // 2
 
-    x = (display_width - image_width * 2 ) // 2
+    x = (display_width - image_width * 2) // 2
 
     # Set the position of the TileGrid
     tile_grid.x = x
