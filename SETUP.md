@@ -94,16 +94,19 @@ patrIoT/
 ## Troubleshooting
 
 ### Workflow Fails
+
 - Check that `OPENAI_API_KEY` is correctly set in repository secrets
 - Verify the API key has sufficient credits and DALL-E access
 - Check the Actions tab for detailed error logs
 
 ### MagTag Connection Issues
+
 - Verify WiFi credentials in `settings.toml`
 - Check that the GitHub raw URL is accessible
 - Ensure all required CircuitPython libraries are installed
 
 ### Image Not Updating
+
 - The workflow runs once per day at midnight UTC
 - You can manually trigger it from the Actions tab
 - Check if there were any recent commits to the `images/` directory

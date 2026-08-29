@@ -1,306 +1,522 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
+  <head>
     <title>PatrIoT - Daily Patriotic Images</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 20px; }
-        .current { background: #f0f8ff; padding: 20px; border-radius: 10px; margin-bottom: 30px; }
-        .archive { margin-top: 30px; }
-        .image-entry { margin: 10px 0; padding: 10px; border: 1px solid #ddd; border-radius: 5px; }
-        .timestamp { color: #666; font-size: 0.9em; }
-        img { max-width: 200px; height: auto; margin: 10px; border: 1px solid #ccc; }
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      .current {
+        background: #f0f8ff;
+        padding: 20px;
+        border-radius: 10px;
+        margin-bottom: 30px;
+      }
+      .archive {
+        margin-top: 30px;
+      }
+      .image-entry {
+        margin: 10px 0;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+      }
+      .timestamp {
+        color: #666;
+        font-size: 0.9em;
+      }
+      img {
+        max-width: 200px;
+        height: auto;
+        margin: 10px;
+        border: 1px solid #ccc;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <h1>🇺🇸 PatrIoT - Daily Patriotic Images</h1>
-    
+
     <div class="current">
-        <h2>Current Image (for MagTag display)</h2>
-        <p>This is the latest image that the MagTag device will download and display.</p>
-        <img src="murica.bmp" alt="Current patriotic image" />
-        <br>
-        <a href="murica.bmp" download>Download murica.bmp</a>
+      <h2>Current Image (for MagTag display)</h2>
+      <p>
+        This is the latest image that the MagTag device will download and
+        display.
+      </p>
+      <img src="murica.bmp" alt="Current patriotic image" />
+      <br />
+      <a href="murica.bmp" download>Download murica.bmp</a>
     </div>
-    
+
     <div class="archive">
-        <h2>Image Archive</h2>
-        <p>Historical patriotic images generated daily by AI.</p>
+      <h2>Image Archive</h2>
+      <p>Historical patriotic images generated daily by AI.</p>
 
-        <div class="image-entry">
-            <div class="timestamp">2026-02-12 00:28:25</div>
-            <img src="1770856105-original.png" alt="Original image from 2026-02-12 00:28:25" />
-            <img src="1770856105-bitmap.bmp" alt="Bitmap version from 2026-02-12 00:28:25" />
-            <br>
-            <a href="1770856105-original.png" download>Original PNG</a> | 
-            <a href="1770856105-bitmap.bmp" download>Bitmap BMP</a>
-        </div>
+      <div class="image-entry">
+        <div class="timestamp">2026-02-12 00:28:25</div>
+        <img
+          src="1770856105-original.png"
+          alt="Original image from 2026-02-12 00:28:25"
+        />
+        <img
+          src="1770856105-bitmap.bmp"
+          alt="Bitmap version from 2026-02-12 00:28:25"
+        />
+        <br />
+        <a href="1770856105-original.png" download>Original PNG</a> |
+        <a href="1770856105-bitmap.bmp" download>Bitmap BMP</a>
+      </div>
 
-        <div class="image-entry">
-            <div class="timestamp">2026-02-11 00:33:17</div>
-            <img src="1770769997-original.png" alt="Original image from 2026-02-11 00:33:17" />
-            <img src="1770769997-bitmap.bmp" alt="Bitmap version from 2026-02-11 00:33:17" />
-            <br>
-            <a href="1770769997-original.png" download>Original PNG</a> | 
-            <a href="1770769997-bitmap.bmp" download>Bitmap BMP</a>
-        </div>
+      <div class="image-entry">
+        <div class="timestamp">2026-02-11 00:33:17</div>
+        <img
+          src="1770769997-original.png"
+          alt="Original image from 2026-02-11 00:33:17"
+        />
+        <img
+          src="1770769997-bitmap.bmp"
+          alt="Bitmap version from 2026-02-11 00:33:17"
+        />
+        <br />
+        <a href="1770769997-original.png" download>Original PNG</a> |
+        <a href="1770769997-bitmap.bmp" download>Bitmap BMP</a>
+      </div>
 
-        <div class="image-entry">
-            <div class="timestamp">2026-02-10 00:33:56</div>
-            <img src="1770683636-original.png" alt="Original image from 2026-02-10 00:33:56" />
-            <img src="1770683636-bitmap.bmp" alt="Bitmap version from 2026-02-10 00:33:56" />
-            <br>
-            <a href="1770683636-original.png" download>Original PNG</a> | 
-            <a href="1770683636-bitmap.bmp" download>Bitmap BMP</a>
-        </div>
+      <div class="image-entry">
+        <div class="timestamp">2026-02-10 00:33:56</div>
+        <img
+          src="1770683636-original.png"
+          alt="Original image from 2026-02-10 00:33:56"
+        />
+        <img
+          src="1770683636-bitmap.bmp"
+          alt="Bitmap version from 2026-02-10 00:33:56"
+        />
+        <br />
+        <a href="1770683636-original.png" download>Original PNG</a> |
+        <a href="1770683636-bitmap.bmp" download>Bitmap BMP</a>
+      </div>
 
-        <div class="image-entry">
-            <div class="timestamp">2026-02-09 00:29:16</div>
-            <img src="1770596956-original.png" alt="Original image from 2026-02-09 00:29:16" />
-            <img src="1770596956-bitmap.bmp" alt="Bitmap version from 2026-02-09 00:29:16" />
-            <br>
-            <a href="1770596956-original.png" download>Original PNG</a> | 
-            <a href="1770596956-bitmap.bmp" download>Bitmap BMP</a>
-        </div>
+      <div class="image-entry">
+        <div class="timestamp">2026-02-09 00:29:16</div>
+        <img
+          src="1770596956-original.png"
+          alt="Original image from 2026-02-09 00:29:16"
+        />
+        <img
+          src="1770596956-bitmap.bmp"
+          alt="Bitmap version from 2026-02-09 00:29:16"
+        />
+        <br />
+        <a href="1770596956-original.png" download>Original PNG</a> |
+        <a href="1770596956-bitmap.bmp" download>Bitmap BMP</a>
+      </div>
 
-        <div class="image-entry">
-            <div class="timestamp">2026-02-08 00:35:43</div>
-            <img src="1770510943-original.png" alt="Original image from 2026-02-08 00:35:43" />
-            <img src="1770510943-bitmap.bmp" alt="Bitmap version from 2026-02-08 00:35:43" />
-            <br>
-            <a href="1770510943-original.png" download>Original PNG</a> | 
-            <a href="1770510943-bitmap.bmp" download>Bitmap BMP</a>
-        </div>
+      <div class="image-entry">
+        <div class="timestamp">2026-02-08 00:35:43</div>
+        <img
+          src="1770510943-original.png"
+          alt="Original image from 2026-02-08 00:35:43"
+        />
+        <img
+          src="1770510943-bitmap.bmp"
+          alt="Bitmap version from 2026-02-08 00:35:43"
+        />
+        <br />
+        <a href="1770510943-original.png" download>Original PNG</a> |
+        <a href="1770510943-bitmap.bmp" download>Bitmap BMP</a>
+      </div>
 
-        <div class="image-entry">
-            <div class="timestamp">2026-02-07 00:27:20</div>
-            <img src="1770424040-original.png" alt="Original image from 2026-02-07 00:27:20" />
-            <img src="1770424040-bitmap.bmp" alt="Bitmap version from 2026-02-07 00:27:20" />
-            <br>
-            <a href="1770424040-original.png" download>Original PNG</a> | 
-            <a href="1770424040-bitmap.bmp" download>Bitmap BMP</a>
-        </div>
+      <div class="image-entry">
+        <div class="timestamp">2026-02-07 00:27:20</div>
+        <img
+          src="1770424040-original.png"
+          alt="Original image from 2026-02-07 00:27:20"
+        />
+        <img
+          src="1770424040-bitmap.bmp"
+          alt="Bitmap version from 2026-02-07 00:27:20"
+        />
+        <br />
+        <a href="1770424040-original.png" download>Original PNG</a> |
+        <a href="1770424040-bitmap.bmp" download>Bitmap BMP</a>
+      </div>
 
-        <div class="image-entry">
-            <div class="timestamp">2026-02-06 00:26:26</div>
-            <img src="1770337586-original.png" alt="Original image from 2026-02-06 00:26:26" />
-            <img src="1770337586-bitmap.bmp" alt="Bitmap version from 2026-02-06 00:26:26" />
-            <br>
-            <a href="1770337586-original.png" download>Original PNG</a> | 
-            <a href="1770337586-bitmap.bmp" download>Bitmap BMP</a>
-        </div>
+      <div class="image-entry">
+        <div class="timestamp">2026-02-06 00:26:26</div>
+        <img
+          src="1770337586-original.png"
+          alt="Original image from 2026-02-06 00:26:26"
+        />
+        <img
+          src="1770337586-bitmap.bmp"
+          alt="Bitmap version from 2026-02-06 00:26:26"
+        />
+        <br />
+        <a href="1770337586-original.png" download>Original PNG</a> |
+        <a href="1770337586-bitmap.bmp" download>Bitmap BMP</a>
+      </div>
 
-        <div class="image-entry">
-            <div class="timestamp">2026-02-05 00:28:48</div>
-            <img src="1770251328-original.png" alt="Original image from 2026-02-05 00:28:48" />
-            <img src="1770251328-bitmap.bmp" alt="Bitmap version from 2026-02-05 00:28:48" />
-            <br>
-            <a href="1770251328-original.png" download>Original PNG</a> | 
-            <a href="1770251328-bitmap.bmp" download>Bitmap BMP</a>
-        </div>
+      <div class="image-entry">
+        <div class="timestamp">2026-02-05 00:28:48</div>
+        <img
+          src="1770251328-original.png"
+          alt="Original image from 2026-02-05 00:28:48"
+        />
+        <img
+          src="1770251328-bitmap.bmp"
+          alt="Bitmap version from 2026-02-05 00:28:48"
+        />
+        <br />
+        <a href="1770251328-original.png" download>Original PNG</a> |
+        <a href="1770251328-bitmap.bmp" download>Bitmap BMP</a>
+      </div>
 
-        <div class="image-entry">
-            <div class="timestamp">2026-02-04 00:25:50</div>
-            <img src="1770164750-original.png" alt="Original image from 2026-02-04 00:25:50" />
-            <img src="1770164750-bitmap.bmp" alt="Bitmap version from 2026-02-04 00:25:50" />
-            <br>
-            <a href="1770164750-original.png" download>Original PNG</a> | 
-            <a href="1770164750-bitmap.bmp" download>Bitmap BMP</a>
-        </div>
+      <div class="image-entry">
+        <div class="timestamp">2026-02-04 00:25:50</div>
+        <img
+          src="1770164750-original.png"
+          alt="Original image from 2026-02-04 00:25:50"
+        />
+        <img
+          src="1770164750-bitmap.bmp"
+          alt="Bitmap version from 2026-02-04 00:25:50"
+        />
+        <br />
+        <a href="1770164750-original.png" download>Original PNG</a> |
+        <a href="1770164750-bitmap.bmp" download>Bitmap BMP</a>
+      </div>
 
-        <div class="image-entry">
-            <div class="timestamp">2026-02-03 00:29:01</div>
-            <img src="1770078541-original.png" alt="Original image from 2026-02-03 00:29:01" />
-            <img src="1770078541-bitmap.bmp" alt="Bitmap version from 2026-02-03 00:29:01" />
-            <br>
-            <a href="1770078541-original.png" download>Original PNG</a> | 
-            <a href="1770078541-bitmap.bmp" download>Bitmap BMP</a>
-        </div>
+      <div class="image-entry">
+        <div class="timestamp">2026-02-03 00:29:01</div>
+        <img
+          src="1770078541-original.png"
+          alt="Original image from 2026-02-03 00:29:01"
+        />
+        <img
+          src="1770078541-bitmap.bmp"
+          alt="Bitmap version from 2026-02-03 00:29:01"
+        />
+        <br />
+        <a href="1770078541-original.png" download>Original PNG</a> |
+        <a href="1770078541-bitmap.bmp" download>Bitmap BMP</a>
+      </div>
 
-        <div class="image-entry">
-            <div class="timestamp">2026-02-02 00:28:20</div>
-            <img src="1769992100-original.png" alt="Original image from 2026-02-02 00:28:20" />
-            <img src="1769992100-bitmap.bmp" alt="Bitmap version from 2026-02-02 00:28:20" />
-            <br>
-            <a href="1769992100-original.png" download>Original PNG</a> | 
-            <a href="1769992100-bitmap.bmp" download>Bitmap BMP</a>
-        </div>
+      <div class="image-entry">
+        <div class="timestamp">2026-02-02 00:28:20</div>
+        <img
+          src="1769992100-original.png"
+          alt="Original image from 2026-02-02 00:28:20"
+        />
+        <img
+          src="1769992100-bitmap.bmp"
+          alt="Bitmap version from 2026-02-02 00:28:20"
+        />
+        <br />
+        <a href="1769992100-original.png" download>Original PNG</a> |
+        <a href="1769992100-bitmap.bmp" download>Bitmap BMP</a>
+      </div>
 
-        <div class="image-entry">
-            <div class="timestamp">2026-02-01 00:31:43</div>
-            <img src="1769905903-original.png" alt="Original image from 2026-02-01 00:31:43" />
-            <img src="1769905903-bitmap.bmp" alt="Bitmap version from 2026-02-01 00:31:43" />
-            <br>
-            <a href="1769905903-original.png" download>Original PNG</a> | 
-            <a href="1769905903-bitmap.bmp" download>Bitmap BMP</a>
-        </div>
+      <div class="image-entry">
+        <div class="timestamp">2026-02-01 00:31:43</div>
+        <img
+          src="1769905903-original.png"
+          alt="Original image from 2026-02-01 00:31:43"
+        />
+        <img
+          src="1769905903-bitmap.bmp"
+          alt="Bitmap version from 2026-02-01 00:31:43"
+        />
+        <br />
+        <a href="1769905903-original.png" download>Original PNG</a> |
+        <a href="1769905903-bitmap.bmp" download>Bitmap BMP</a>
+      </div>
 
-        <div class="image-entry">
-            <div class="timestamp">2026-01-31 00:26:06</div>
-            <img src="1769819166-original.png" alt="Original image from 2026-01-31 00:26:06" />
-            <img src="1769819166-bitmap.bmp" alt="Bitmap version from 2026-01-31 00:26:06" />
-            <br>
-            <a href="1769819166-original.png" download>Original PNG</a> | 
-            <a href="1769819166-bitmap.bmp" download>Bitmap BMP</a>
-        </div>
+      <div class="image-entry">
+        <div class="timestamp">2026-01-31 00:26:06</div>
+        <img
+          src="1769819166-original.png"
+          alt="Original image from 2026-01-31 00:26:06"
+        />
+        <img
+          src="1769819166-bitmap.bmp"
+          alt="Bitmap version from 2026-01-31 00:26:06"
+        />
+        <br />
+        <a href="1769819166-original.png" download>Original PNG</a> |
+        <a href="1769819166-bitmap.bmp" download>Bitmap BMP</a>
+      </div>
 
-        <div class="image-entry">
-            <div class="timestamp">2026-01-30 00:26:49</div>
-            <img src="1769732809-original.png" alt="Original image from 2026-01-30 00:26:49" />
-            <img src="1769732809-bitmap.bmp" alt="Bitmap version from 2026-01-30 00:26:49" />
-            <br>
-            <a href="1769732809-original.png" download>Original PNG</a> | 
-            <a href="1769732809-bitmap.bmp" download>Bitmap BMP</a>
-        </div>
+      <div class="image-entry">
+        <div class="timestamp">2026-01-30 00:26:49</div>
+        <img
+          src="1769732809-original.png"
+          alt="Original image from 2026-01-30 00:26:49"
+        />
+        <img
+          src="1769732809-bitmap.bmp"
+          alt="Bitmap version from 2026-01-30 00:26:49"
+        />
+        <br />
+        <a href="1769732809-original.png" download>Original PNG</a> |
+        <a href="1769732809-bitmap.bmp" download>Bitmap BMP</a>
+      </div>
 
-        <div class="image-entry">
-            <div class="timestamp">2026-01-29 00:26:43</div>
-            <img src="1769646403-original.png" alt="Original image from 2026-01-29 00:26:43" />
-            <img src="1769646403-bitmap.bmp" alt="Bitmap version from 2026-01-29 00:26:43" />
-            <br>
-            <a href="1769646403-original.png" download>Original PNG</a> | 
-            <a href="1769646403-bitmap.bmp" download>Bitmap BMP</a>
-        </div>
+      <div class="image-entry">
+        <div class="timestamp">2026-01-29 00:26:43</div>
+        <img
+          src="1769646403-original.png"
+          alt="Original image from 2026-01-29 00:26:43"
+        />
+        <img
+          src="1769646403-bitmap.bmp"
+          alt="Bitmap version from 2026-01-29 00:26:43"
+        />
+        <br />
+        <a href="1769646403-original.png" download>Original PNG</a> |
+        <a href="1769646403-bitmap.bmp" download>Bitmap BMP</a>
+      </div>
 
-        <div class="image-entry">
-            <div class="timestamp">2026-01-28 00:23:38</div>
-            <img src="1769559818-original.png" alt="Original image from 2026-01-28 00:23:38" />
-            <img src="1769559818-bitmap.bmp" alt="Bitmap version from 2026-01-28 00:23:38" />
-            <br>
-            <a href="1769559818-original.png" download>Original PNG</a> | 
-            <a href="1769559818-bitmap.bmp" download>Bitmap BMP</a>
-        </div>
+      <div class="image-entry">
+        <div class="timestamp">2026-01-28 00:23:38</div>
+        <img
+          src="1769559818-original.png"
+          alt="Original image from 2026-01-28 00:23:38"
+        />
+        <img
+          src="1769559818-bitmap.bmp"
+          alt="Bitmap version from 2026-01-28 00:23:38"
+        />
+        <br />
+        <a href="1769559818-original.png" download>Original PNG</a> |
+        <a href="1769559818-bitmap.bmp" download>Bitmap BMP</a>
+      </div>
 
-        <div class="image-entry">
-            <div class="timestamp">2026-01-27 00:24:50</div>
-            <img src="1769473490-original.png" alt="Original image from 2026-01-27 00:24:50" />
-            <img src="1769473490-bitmap.bmp" alt="Bitmap version from 2026-01-27 00:24:50" />
-            <br>
-            <a href="1769473490-original.png" download>Original PNG</a> | 
-            <a href="1769473490-bitmap.bmp" download>Bitmap BMP</a>
-        </div>
+      <div class="image-entry">
+        <div class="timestamp">2026-01-27 00:24:50</div>
+        <img
+          src="1769473490-original.png"
+          alt="Original image from 2026-01-27 00:24:50"
+        />
+        <img
+          src="1769473490-bitmap.bmp"
+          alt="Bitmap version from 2026-01-27 00:24:50"
+        />
+        <br />
+        <a href="1769473490-original.png" download>Original PNG</a> |
+        <a href="1769473490-bitmap.bmp" download>Bitmap BMP</a>
+      </div>
 
-        <div class="image-entry">
-            <div class="timestamp">2026-01-26 00:25:11</div>
-            <img src="1769387111-original.png" alt="Original image from 2026-01-26 00:25:11" />
-            <img src="1769387111-bitmap.bmp" alt="Bitmap version from 2026-01-26 00:25:11" />
-            <br>
-            <a href="1769387111-original.png" download>Original PNG</a> | 
-            <a href="1769387111-bitmap.bmp" download>Bitmap BMP</a>
-        </div>
+      <div class="image-entry">
+        <div class="timestamp">2026-01-26 00:25:11</div>
+        <img
+          src="1769387111-original.png"
+          alt="Original image from 2026-01-26 00:25:11"
+        />
+        <img
+          src="1769387111-bitmap.bmp"
+          alt="Bitmap version from 2026-01-26 00:25:11"
+        />
+        <br />
+        <a href="1769387111-original.png" download>Original PNG</a> |
+        <a href="1769387111-bitmap.bmp" download>Bitmap BMP</a>
+      </div>
 
-        <div class="image-entry">
-            <div class="timestamp">2026-01-25 00:25:49</div>
-            <img src="1769300749-original.png" alt="Original image from 2026-01-25 00:25:49" />
-            <img src="1769300749-bitmap.bmp" alt="Bitmap version from 2026-01-25 00:25:49" />
-            <br>
-            <a href="1769300749-original.png" download>Original PNG</a> | 
-            <a href="1769300749-bitmap.bmp" download>Bitmap BMP</a>
-        </div>
+      <div class="image-entry">
+        <div class="timestamp">2026-01-25 00:25:49</div>
+        <img
+          src="1769300749-original.png"
+          alt="Original image from 2026-01-25 00:25:49"
+        />
+        <img
+          src="1769300749-bitmap.bmp"
+          alt="Bitmap version from 2026-01-25 00:25:49"
+        />
+        <br />
+        <a href="1769300749-original.png" download>Original PNG</a> |
+        <a href="1769300749-bitmap.bmp" download>Bitmap BMP</a>
+      </div>
 
-        <div class="image-entry">
-            <div class="timestamp">2026-01-24 00:22:39</div>
-            <img src="1769214159-original.png" alt="Original image from 2026-01-24 00:22:39" />
-            <img src="1769214159-bitmap.bmp" alt="Bitmap version from 2026-01-24 00:22:39" />
-            <br>
-            <a href="1769214159-original.png" download>Original PNG</a> | 
-            <a href="1769214159-bitmap.bmp" download>Bitmap BMP</a>
-        </div>
+      <div class="image-entry">
+        <div class="timestamp">2026-01-24 00:22:39</div>
+        <img
+          src="1769214159-original.png"
+          alt="Original image from 2026-01-24 00:22:39"
+        />
+        <img
+          src="1769214159-bitmap.bmp"
+          alt="Bitmap version from 2026-01-24 00:22:39"
+        />
+        <br />
+        <a href="1769214159-original.png" download>Original PNG</a> |
+        <a href="1769214159-bitmap.bmp" download>Bitmap BMP</a>
+      </div>
 
-        <div class="image-entry">
-            <div class="timestamp">2026-01-23 00:23:58</div>
-            <img src="1769127838-original.png" alt="Original image from 2026-01-23 00:23:58" />
-            <img src="1769127838-bitmap.bmp" alt="Bitmap version from 2026-01-23 00:23:58" />
-            <br>
-            <a href="1769127838-original.png" download>Original PNG</a> | 
-            <a href="1769127838-bitmap.bmp" download>Bitmap BMP</a>
-        </div>
+      <div class="image-entry">
+        <div class="timestamp">2026-01-23 00:23:58</div>
+        <img
+          src="1769127838-original.png"
+          alt="Original image from 2026-01-23 00:23:58"
+        />
+        <img
+          src="1769127838-bitmap.bmp"
+          alt="Bitmap version from 2026-01-23 00:23:58"
+        />
+        <br />
+        <a href="1769127838-original.png" download>Original PNG</a> |
+        <a href="1769127838-bitmap.bmp" download>Bitmap BMP</a>
+      </div>
 
-        <div class="image-entry">
-            <div class="timestamp">2026-01-22 00:24:31</div>
-            <img src="1769041471-original.png" alt="Original image from 2026-01-22 00:24:31" />
-            <img src="1769041471-bitmap.bmp" alt="Bitmap version from 2026-01-22 00:24:31" />
-            <br>
-            <a href="1769041471-original.png" download>Original PNG</a> | 
-            <a href="1769041471-bitmap.bmp" download>Bitmap BMP</a>
-        </div>
+      <div class="image-entry">
+        <div class="timestamp">2026-01-22 00:24:31</div>
+        <img
+          src="1769041471-original.png"
+          alt="Original image from 2026-01-22 00:24:31"
+        />
+        <img
+          src="1769041471-bitmap.bmp"
+          alt="Bitmap version from 2026-01-22 00:24:31"
+        />
+        <br />
+        <a href="1769041471-original.png" download>Original PNG</a> |
+        <a href="1769041471-bitmap.bmp" download>Bitmap BMP</a>
+      </div>
 
-        <div class="image-entry">
-            <div class="timestamp">2026-01-21 00:24:16</div>
-            <img src="1768955056-original.png" alt="Original image from 2026-01-21 00:24:16" />
-            <img src="1768955056-bitmap.bmp" alt="Bitmap version from 2026-01-21 00:24:16" />
-            <br>
-            <a href="1768955056-original.png" download>Original PNG</a> | 
-            <a href="1768955056-bitmap.bmp" download>Bitmap BMP</a>
-        </div>
+      <div class="image-entry">
+        <div class="timestamp">2026-01-21 00:24:16</div>
+        <img
+          src="1768955056-original.png"
+          alt="Original image from 2026-01-21 00:24:16"
+        />
+        <img
+          src="1768955056-bitmap.bmp"
+          alt="Bitmap version from 2026-01-21 00:24:16"
+        />
+        <br />
+        <a href="1768955056-original.png" download>Original PNG</a> |
+        <a href="1768955056-bitmap.bmp" download>Bitmap BMP</a>
+      </div>
 
-        <div class="image-entry">
-            <div class="timestamp">2026-01-20 00:22:48</div>
-            <img src="1768868568-original.png" alt="Original image from 2026-01-20 00:22:48" />
-            <img src="1768868568-bitmap.bmp" alt="Bitmap version from 2026-01-20 00:22:48" />
-            <br>
-            <a href="1768868568-original.png" download>Original PNG</a> | 
-            <a href="1768868568-bitmap.bmp" download>Bitmap BMP</a>
-        </div>
+      <div class="image-entry">
+        <div class="timestamp">2026-01-20 00:22:48</div>
+        <img
+          src="1768868568-original.png"
+          alt="Original image from 2026-01-20 00:22:48"
+        />
+        <img
+          src="1768868568-bitmap.bmp"
+          alt="Bitmap version from 2026-01-20 00:22:48"
+        />
+        <br />
+        <a href="1768868568-original.png" download>Original PNG</a> |
+        <a href="1768868568-bitmap.bmp" download>Bitmap BMP</a>
+      </div>
 
-        <div class="image-entry">
-            <div class="timestamp">2026-01-19 00:24:42</div>
-            <img src="1768782282-original.png" alt="Original image from 2026-01-19 00:24:42" />
-            <img src="1768782282-bitmap.bmp" alt="Bitmap version from 2026-01-19 00:24:42" />
-            <br>
-            <a href="1768782282-original.png" download>Original PNG</a> | 
-            <a href="1768782282-bitmap.bmp" download>Bitmap BMP</a>
-        </div>
+      <div class="image-entry">
+        <div class="timestamp">2026-01-19 00:24:42</div>
+        <img
+          src="1768782282-original.png"
+          alt="Original image from 2026-01-19 00:24:42"
+        />
+        <img
+          src="1768782282-bitmap.bmp"
+          alt="Bitmap version from 2026-01-19 00:24:42"
+        />
+        <br />
+        <a href="1768782282-original.png" download>Original PNG</a> |
+        <a href="1768782282-bitmap.bmp" download>Bitmap BMP</a>
+      </div>
 
-        <div class="image-entry">
-            <div class="timestamp">2026-01-18 00:25:04</div>
-            <img src="1768695904-original.png" alt="Original image from 2026-01-18 00:25:04" />
-            <img src="1768695904-bitmap.bmp" alt="Bitmap version from 2026-01-18 00:25:04" />
-            <br>
-            <a href="1768695904-original.png" download>Original PNG</a> | 
-            <a href="1768695904-bitmap.bmp" download>Bitmap BMP</a>
-        </div>
+      <div class="image-entry">
+        <div class="timestamp">2026-01-18 00:25:04</div>
+        <img
+          src="1768695904-original.png"
+          alt="Original image from 2026-01-18 00:25:04"
+        />
+        <img
+          src="1768695904-bitmap.bmp"
+          alt="Bitmap version from 2026-01-18 00:25:04"
+        />
+        <br />
+        <a href="1768695904-original.png" download>Original PNG</a> |
+        <a href="1768695904-bitmap.bmp" download>Bitmap BMP</a>
+      </div>
 
-        <div class="image-entry">
-            <div class="timestamp">2026-01-17 00:22:24</div>
-            <img src="1768609344-original.png" alt="Original image from 2026-01-17 00:22:24" />
-            <img src="1768609344-bitmap.bmp" alt="Bitmap version from 2026-01-17 00:22:24" />
-            <br>
-            <a href="1768609344-original.png" download>Original PNG</a> | 
-            <a href="1768609344-bitmap.bmp" download>Bitmap BMP</a>
-        </div>
+      <div class="image-entry">
+        <div class="timestamp">2026-01-17 00:22:24</div>
+        <img
+          src="1768609344-original.png"
+          alt="Original image from 2026-01-17 00:22:24"
+        />
+        <img
+          src="1768609344-bitmap.bmp"
+          alt="Bitmap version from 2026-01-17 00:22:24"
+        />
+        <br />
+        <a href="1768609344-original.png" download>Original PNG</a> |
+        <a href="1768609344-bitmap.bmp" download>Bitmap BMP</a>
+      </div>
 
-        <div class="image-entry">
-            <div class="timestamp">2026-01-16 00:23:33</div>
-            <img src="1768523013-original.png" alt="Original image from 2026-01-16 00:23:33" />
-            <img src="1768523013-bitmap.bmp" alt="Bitmap version from 2026-01-16 00:23:33" />
-            <br>
-            <a href="1768523013-original.png" download>Original PNG</a> | 
-            <a href="1768523013-bitmap.bmp" download>Bitmap BMP</a>
-        </div>
+      <div class="image-entry">
+        <div class="timestamp">2026-01-16 00:23:33</div>
+        <img
+          src="1768523013-original.png"
+          alt="Original image from 2026-01-16 00:23:33"
+        />
+        <img
+          src="1768523013-bitmap.bmp"
+          alt="Bitmap version from 2026-01-16 00:23:33"
+        />
+        <br />
+        <a href="1768523013-original.png" download>Original PNG</a> |
+        <a href="1768523013-bitmap.bmp" download>Bitmap BMP</a>
+      </div>
 
-        <div class="image-entry">
-            <div class="timestamp">2026-01-15 00:21:56</div>
-            <img src="1768436516-original.png" alt="Original image from 2026-01-15 00:21:56" />
-            <img src="1768436516-bitmap.bmp" alt="Bitmap version from 2026-01-15 00:21:56" />
-            <br>
-            <a href="1768436516-original.png" download>Original PNG</a> | 
-            <a href="1768436516-bitmap.bmp" download>Bitmap BMP</a>
-        </div>
+      <div class="image-entry">
+        <div class="timestamp">2026-01-15 00:21:56</div>
+        <img
+          src="1768436516-original.png"
+          alt="Original image from 2026-01-15 00:21:56"
+        />
+        <img
+          src="1768436516-bitmap.bmp"
+          alt="Bitmap version from 2026-01-15 00:21:56"
+        />
+        <br />
+        <a href="1768436516-original.png" download>Original PNG</a> |
+        <a href="1768436516-bitmap.bmp" download>Bitmap BMP</a>
+      </div>
 
-        <div class="image-entry">
-            <div class="timestamp">2026-01-14 00:23:49</div>
-            <img src="1768350229-original.png" alt="Original image from 2026-01-14 00:23:49" />
-            <img src="1768350229-bitmap.bmp" alt="Bitmap version from 2026-01-14 00:23:49" />
-            <br>
-            <a href="1768350229-original.png" download>Original PNG</a> | 
-            <a href="1768350229-bitmap.bmp" download>Bitmap BMP</a>
-        </div>
-
+      <div class="image-entry">
+        <div class="timestamp">2026-01-14 00:23:49</div>
+        <img
+          src="1768350229-original.png"
+          alt="Original image from 2026-01-14 00:23:49"
+        />
+        <img
+          src="1768350229-bitmap.bmp"
+          alt="Bitmap version from 2026-01-14 00:23:49"
+        />
+        <br />
+        <a href="1768350229-original.png" download>Original PNG</a> |
+        <a href="1768350229-bitmap.bmp" download>Bitmap BMP</a>
+      </div>
     </div>
-    
-    <footer style="margin-top: 50px; padding-top: 20px; border-top: 1px solid #ddd; color: #666;">
-        <p>Generated automatically by GitHub Actions using OpenAI DALL-E</p>
-        <p>Part of the <a href="https://github.com/pid1/patrIoT">PatrIoT project</a> - Daily AI-generated patriotic images for AdaFruit MagTag</p>
+
+    <footer
+      style="
+        margin-top: 50px;
+        padding-top: 20px;
+        border-top: 1px solid #ddd;
+        color: #666;
+      "
+    >
+      <p>Generated automatically by GitHub Actions using OpenAI DALL-E</p>
+      <p>
+        Part of the
+        <a href="https://github.com/pid1/patrIoT">PatrIoT project</a> - Daily
+        AI-generated patriotic images for AdaFruit MagTag
+      </p>
     </footer>
-</body>
+  </body>
 </html>
