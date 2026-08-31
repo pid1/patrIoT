@@ -64,7 +64,7 @@ Copy the contents of the `magtag/` directory to your MagTag device.
 
 ## File Structure
 
-```
+```text
 patrIoT/
 ├── .github/workflows/
 │   ├── generate-patriotic-image.yml  # Daily image generation
