@@ -1,3 +1,0 @@
-# super-linter reads linter configs from LINTER_RULES_PATH rather than the
-# project root, and otherwise uses its own defaults.
-line-length = 88
