@@ -6,8 +6,10 @@ import os
 import random
 import sys
 from pathlib import Path
+
 from openai import OpenAI
 from PIL import Image
+
 
 def main():
     # Check for required API key
@@ -29,7 +31,7 @@ def main():
         "the Statue of Liberty",
         "a bald eagle in profile",
         "Abraham Lincoln's portrait",
-        "George Washington's portrait", 
+        "George Washington's portrait",
         "an American flag waving",
         "the Liberty Bell",
         "Mount Rushmore",
@@ -44,14 +46,14 @@ def main():
         "NASA astronauts",
         "saturn V rocket",
     ]
-    
+
     subject = random.choice(subjects)
-    
+
     try:
         # Generate image using the same prompt as the original server
         response = client.images.generate(
             model="gpt-image-1.5",
-            prompt = (
+            prompt=(
                 f"Children's book illustration of {subject}, close-up filling most of the frame. "
                 "Hand-drawn style with bold outlines, high contrast suitable for greyscale dithering. "
                 "Simple, minimal background. No text or watermarks. 128x128 pixel e-ink display target."
@@ -66,11 +68,11 @@ def main():
 
         with open("temp_generated.png", "wb") as f:
             f.write(image_bytes)
-        
+
         # Generate timestamp for archival
         timestamp = int(datetime.datetime.now().timestamp())
         date_str = datetime.datetime.now().strftime("%Y-%m-%d")
-        
+
         print(f"Processing image for {date_str}...")
 
         # Save the original high-resolution image for archival
@@ -89,7 +91,7 @@ def main():
         current_bmp_path = images_dir / "murica.bmp"
         indexed_image.save(current_bmp_path)
         print(f"Saved current bitmap: {current_bmp_path}")
-        
+
         # Also save an archived version with timestamp
         archived_bmp_path = images_dir / f"{timestamp}-bitmap.bmp"
         indexed_image.save(archived_bmp_path)
@@ -97,22 +99,23 @@ def main():
 
         # Clean up temporary file
         Path("temp_generated.png").unlink()
-        
+
         print("Image generation and processing completed successfully!")
-        
+
         # Create or update index file for easy browsing
         create_image_index(images_dir)
-        
+
     except Exception as e:
         print(f"Error generating image: {e}", file=sys.stderr)
         sys.exit(1)
 
+
 def create_image_index(images_dir):
     """Create an HTML index file for browsing historical images"""
     index_path = images_dir / "index.html"
-    
+
     # Get all image files
-    original_images = sorted(images_dir.glob("*-original.png"), reverse=True)    
+    original_images = sorted(images_dir.glob("*-original.png"), reverse=True)
     html_content = """<!DOCTYPE html>
 <html>
 <head>
@@ -141,18 +144,18 @@ def create_image_index(images_dir):
         <h2>Image Archive</h2>
         <p>Historical patriotic images generated daily by AI.</p>
 """
-    
+
     # Add archived images
     for i, original_path in enumerate(original_images[:30]):  # Show last 30 images
-        timestamp = original_path.stem.split('-')[0]
+        timestamp = original_path.stem.split("-")[0]
         try:
             date = datetime.datetime.fromtimestamp(int(timestamp))
             date_str = date.strftime("%Y-%m-%d %H:%M:%S")
         except (ValueError, IndexError):
             date_str = "Unknown date"
-            
+
         bitmap_path = images_dir / f"{timestamp}-bitmap.bmp"
-        
+
         html_content += f"""
         <div class="image-entry">
             <div class="timestamp">{date_str}</div>
@@ -163,7 +166,7 @@ def create_image_index(images_dir):
             <a href="{bitmap_path.name}" download>Bitmap BMP</a>
         </div>
 """
-    
+
     html_content += """
     </div>
     
@@ -174,11 +177,12 @@ def create_image_index(images_dir):
 </body>
 </html>
 """
-    
-    with open(index_path, 'w') as f:
+
+    with open(index_path, "w") as f:
         f.write(html_content)
-    
+
     print(f"Created image index: {index_path}")
+
 
 if __name__ == "__main__":
     main()
