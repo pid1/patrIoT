@@ -1,0 +1,6 @@
+[flake8]
+# magtag/code.py is CircuitPython: an unhandled exception halts the
+# display loop until the board is physically reset, so a bare except is
+# the defensive choice rather than a mistake.
+extend-ignore = E722
+max-line-length = 88
