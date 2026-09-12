@@ -1,0 +1,21 @@
+# Response headers for the deployed images.
+
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+
+# murica.bmp is overwritten in place by each generated image, so a long cache
+# would hand the display yesterday's picture.
+/murica.bmp
+  Cache-Control: public, max-age=300
+
+# Archived images are immutable once written.
+/*-bitmap.bmp
+  Cache-Control: public, max-age=604800
+
+/*-original.png
+  Cache-Control: public, max-age=604800
+
+# Read by .github/workflows/cf-fallback.yml; must never be cached.
+/.build-id
+  Cache-Control: no-store

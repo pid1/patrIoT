@@ -1,0 +1,17 @@
+# patriot.pid1.space -- the generated image and its archive.
+#
+# This was a project page at pid1.space/patrIoT/, which only worked because
+# it inherited the user site's custom domain. On Cloudflare it is its own
+# Worker on its own hostname; the old path still resolves through a redirect
+# rule on the apex.
+
+name = "patriot"
+compatibility_date = "2026-09-11"
+
+[assets]
+directory = "./dist"
+html_handling = "auto-trailing-slash"
+
+[[routes]]
+pattern = "patriot.pid1.space"
+custom_domain = true
