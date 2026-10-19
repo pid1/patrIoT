@@ -52,7 +52,7 @@ def main():
     try:
         # Generate image using the same prompt as the original server
         response = client.images.generate(
-            model="gpt-image-1.5",
+            model="gpt-image-2.5-flare",
             prompt=(
                 f"Children's book illustration of {subject}, close-up filling most of the frame. "
                 "Hand-drawn style with bold outlines, high contrast suitable for greyscale dithering. "
