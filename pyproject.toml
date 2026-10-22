@@ -15,5 +15,6 @@ exclude-newer = "7 days"
 # Cooldown exception (factory 2026-10-22): pillow 13.0.0 (published 2026-10-16)
 # fixes ~25 advisories, two reachable from scripts/generate_image.py (TIFF
 # encoder ColorMap OOB read GHSA-pchr-8j38-3x4p; TIFF decoder uninitialized
-# memory GHSA-q45j-58j2-45rg). Remove after 2026-10-23, once 13.0.0 is a week old.
-exclude-newer-package = { pillow = false }
+# memory GHSA-q45j-58j2-45rg). Capped at 13.0.0 (timestamp), not lifted for
+# future releases. Remove after 2026-10-23, once 13.0.0 is a week old.
+exclude-newer-package = { pillow = "2026-10-17T00:00:00Z" }
