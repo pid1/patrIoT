@@ -4,7 +4,7 @@ version = "0.1.0"
 description = "Generates the daily patriotic image for the MagTag display (scripts/generate_image.py)."
 requires-python = ">=3.15"
 dependencies = [
-    "openai>=3.29.0",
+    "openai>=3.31.0",
     "pillow>=12.3.0",
 ]
 
